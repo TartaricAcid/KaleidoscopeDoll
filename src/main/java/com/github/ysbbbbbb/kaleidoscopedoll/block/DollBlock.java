@@ -1,19 +1,29 @@
 package com.github.ysbbbbbb.kaleidoscopedoll.block;
 
+import com.github.ysbbbbbb.kaleidoscopedoll.init.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
@@ -28,7 +38,7 @@ public class DollBlock extends HorizontalDirectionalBlock {
                 .instrument(NoteBlockInstrument.BASEDRUM)
                 .sound(SoundType.WOOL).strength(0f, 10f)
                 .noOcclusion());
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.SOUTH));
     }
 
     public static DollBlock getAuthorDoll() {
@@ -38,6 +48,21 @@ public class DollBlock extends HorizontalDirectionalBlock {
                 list.add(Component.translatable("tooltip.kaleidoscope_doll.doll.author").withStyle(ChatFormatting.DARK_GRAY));
             }
         };
+    }
+
+    @Override
+    public InteractionResult use(BlockState pState, Level level, BlockPos pos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (level instanceof ServerLevel serverLevel) {
+            Vec3 notePos = Vec3.atBottomCenterOf(pos).add(
+                    level.getRandom().nextFloat() / 2 - 0.25,
+                    1 + level.getRandom().nextFloat() / 5,
+                    level.getRandom().nextFloat() / 2 - 0.25
+            );
+            float color = level.getRandom().nextInt(4) / 24.0F;
+            serverLevel.sendParticles(ParticleTypes.NOTE, notePos.x(), notePos.y(), notePos.z(), 0, color, 0, 0, 1);
+            serverLevel.playSound(null, pos, ModSounds.DUCK_TOY, SoundSource.BLOCKS, 1.0f, level.random.nextFloat() * 0.5f + 0.75f);
+        }
+        return InteractionResult.SUCCESS;
     }
 
     @Override

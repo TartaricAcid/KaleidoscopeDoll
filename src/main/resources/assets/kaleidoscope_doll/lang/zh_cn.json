@@ -7,5 +7,6 @@
   "block.kaleidoscope_doll.doll": "玩偶",
   "tooltip.kaleidoscope_doll.doll_machine": "使用钻石代币抽奖！",
   "tooltip.kaleidoscope_doll.doll.author": "作者",
-  "tooltip.kaleidoscope_doll.doll_gift_box": "破坏后获取玩偶"
+  "tooltip.kaleidoscope_doll.doll_gift_box": "破坏后获取玩偶",
+  "subtitle.kaleidoscope_doll.block.duck_toy": "声音：鸭子玩具"
 }
