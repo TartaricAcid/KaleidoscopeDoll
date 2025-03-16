@@ -1,0 +1,11 @@
+{
+  "item_group.kaleidoscope_doll.doll.name": "Kaleidoscope Doll",
+  "block.kaleidoscope_doll.doll_machine": "Doll Machine",
+  "block.kaleidoscope_doll.purple_doll_gift_box": "Purple Doll Gift Box",
+  "block.kaleidoscope_doll.green_doll_gift_box": "Green Doll Gift Box",
+  "block.kaleidoscope_doll.yellow_doll_gift_box": "Yellow Doll Gift Box",
+  "block.kaleidoscope_doll.doll": "Doll",
+  "tooltip.kaleidoscope_doll.doll_machine": "Use diamond tokens to draw dolls!",
+  "tooltip.kaleidoscope_doll.doll.author": "Author",
+  "tooltip.kaleidoscope_doll.doll_gift_box": "Destroy and get the doll"
+}

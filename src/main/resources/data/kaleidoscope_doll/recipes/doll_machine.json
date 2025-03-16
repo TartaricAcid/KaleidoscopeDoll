@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aca"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:copper_ingot"
+    },
+    "b": {
+      "item": "minecraft:jukebox"
+    },
+    "c": {
+      "item": "minecraft:oxidized_copper"
+    }
+  },
+  "result": {
+    "item": "kaleidoscope_doll:doll_machine",
+    "count": 1
+  }
+}
