@@ -23,6 +23,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             mods {
                 "${mod_id}" {
                     source sourceSets.main
@@ -59,6 +61,10 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
 }
 
 dependencies {
@@ -67,6 +73,8 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-1.20.1-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-1.20.1-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:${jei_version}")
+
+    runtimeOnly fg.deobf("maven.modrinth:touhou-little-maid:1.2.1-forge,1.20.1")
 }
 
 tasks.named('processResources', ProcessResources).configure {

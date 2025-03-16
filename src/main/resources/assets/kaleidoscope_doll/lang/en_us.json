@@ -7,5 +7,6 @@
   "block.kaleidoscope_doll.doll": "Doll",
   "tooltip.kaleidoscope_doll.doll_machine": "Use diamond tokens to draw dolls!",
   "tooltip.kaleidoscope_doll.doll.author": "Author",
-  "tooltip.kaleidoscope_doll.doll_gift_box": "Destroy and get the doll"
+  "tooltip.kaleidoscope_doll.doll_gift_box": "Destroy and get the doll",
+  "subtitle.kaleidoscope_doll.block.duck_toy": "Duck Toy Sound"
 }
