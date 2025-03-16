@@ -2,7 +2,7 @@
 	"credit": "Made by YSBB with Blockbench",
 	"render_type": "cutout",
 	"textures": {
-		"1": "kaleidoscope_doll:block/doll/10005",
+		"1": "kaleidoscope_doll:block/doll/doll_5",
 		"particle": "block/white_wool"
 	},
 	"elements": [

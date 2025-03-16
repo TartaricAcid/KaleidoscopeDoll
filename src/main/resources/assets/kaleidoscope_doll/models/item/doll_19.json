@@ -3,7 +3,7 @@
 	"render_type": "cutout",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "kaleidoscope_doll:block/doll/10030",
+		"0": "kaleidoscope_doll:block/doll/doll_19",
 		"particle": "block/stone"
 	},
 	"elements": [

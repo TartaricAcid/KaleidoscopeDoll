@@ -64,6 +64,7 @@ public class DollMachineBlock extends HorizontalDirectionalBlock {
                 serverLevel.sendParticles(ParticleTypes.WAX_OFF, x + 0.5, y + 1, z + 0.5, 8, 0.5, 0.5, 0.5, 0.2);
                 world.scheduleTick(pos, blockstate.getBlock(), 60);
             }
+            return InteractionResult.SUCCESS;
         }
         return super.use(blockstate, world, pos, entity, hand, hit);
     }
@@ -84,13 +85,15 @@ public class DollMachineBlock extends HorizontalDirectionalBlock {
         world.playSound(null, x, y, z, SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.BLOCKS, 1f, 1f);
         world.setBlockAndUpdate(pos, blockstate.setValue(LOTTERY_IN_PROGRESS, false));
 
-        int totalCount = GeneralConfig.YELLOW_DOLL_GIFT_BOX_WEIGHT.get() + GeneralConfig.GREEN_DOLL_GIFT_BOX_WEIGHT.get() + GeneralConfig.PURPLE_DOLL_GIFT_BOX_WEIGHT.get();
+        int yellowCount = GeneralConfig.YELLOW_DOLL_GIFT_BOX_WEIGHT.get();
+        int greenCount = yellowCount + GeneralConfig.GREEN_DOLL_GIFT_BOX_WEIGHT.get();
+        int totalCount = greenCount + GeneralConfig.PURPLE_DOLL_GIFT_BOX_WEIGHT.get();
         int count = random.nextInt(0, totalCount);
 
         ItemEntity item;
-        if (count <= GeneralConfig.YELLOW_DOLL_GIFT_BOX_WEIGHT.get()) {
+        if (count <= yellowCount) {
             item = new ItemEntity(world, x + 0.5, y + 1.8, z + 0.5, ModItems.YELLOW_DOLL_GIFT_BOX.get().getDefaultInstance());
-        } else if (count <= GeneralConfig.YELLOW_DOLL_GIFT_BOX_WEIGHT.get() + GeneralConfig.GREEN_DOLL_GIFT_BOX_WEIGHT.get()) {
+        } else if (count <= greenCount) {
             item = new ItemEntity(world, x + 0.5, y + 1.8, z + 0.5, ModItems.GREEN_DOLL_GIFT_BOX.get().getDefaultInstance());
         } else {
             item = new ItemEntity(world, x + 0.5, y + 1.8, z + 0.5, ModItems.PURPLE_DOLL_GIFT_BOX.get().getDefaultInstance());

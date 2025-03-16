@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"render_type": "cutout",
 	"textures": {
-		"1": "kaleidoscope_doll:block/doll/10021",
+		"1": "kaleidoscope_doll:block/doll/doll_10",
 		"particle": "block/stone"
 	},
 	"elements": [
