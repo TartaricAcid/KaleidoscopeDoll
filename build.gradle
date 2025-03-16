@@ -8,10 +8,6 @@ version = project.mod_version
 group = project.maven_group
 archivesBaseName = "kaleidoscopedoll-${minecraft_version}-fabric"
 
-base {
-    archivesName = project.archives_base_name
-}
-
 loom {
     splitEnvironmentSourceSets()
     mods {
