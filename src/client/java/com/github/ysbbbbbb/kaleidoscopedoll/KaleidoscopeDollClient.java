@@ -10,7 +10,8 @@ public class KaleidoscopeDollClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DOLL_MACHINE, RenderType.translucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DOLL_AUTHOR, RenderType.translucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DOLL_AUTHOR_YSBB, RenderType.translucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DOLL_AUTHOR_943, RenderType.translucent());
         ModRegisterEvent.DOLL_BLOCKS.values().forEach(b -> BlockRenderLayerMap.INSTANCE.putBlock(b, RenderType.translucent()));
     }
 }

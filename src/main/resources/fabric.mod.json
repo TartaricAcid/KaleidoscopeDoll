@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "KaleidoscopeDoll",
   "description": "",
-  "authors": [],
+  "authors": ["ysbb", "tartaric_acid"],
   "contact": {},
   "license": "All-Rights-Reserved",
   "environment": "*",

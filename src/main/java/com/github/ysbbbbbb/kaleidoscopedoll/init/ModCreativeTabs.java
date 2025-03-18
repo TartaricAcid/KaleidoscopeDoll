@@ -25,7 +25,8 @@ public class ModCreativeTabs {
                     output.accept(ModItems.PURPLE_DOLL_GIFT_BOX);
                     output.accept(ModItems.GREEN_DOLL_GIFT_BOX);
                     output.accept(ModItems.YELLOW_DOLL_GIFT_BOX);
-                    output.accept(ModItems.DOLL_AUTHOR);
+                    output.accept(ModItems.DOLL_AUTHOR_YSBB);
+                    output.accept(ModItems.DOLL_AUTHOR_943);
                     ModRegisterEvent.DOLL_ITEMS.forEach(output::accept);
                 }).build());
     }
