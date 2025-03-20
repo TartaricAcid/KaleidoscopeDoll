@@ -8,7 +8,7 @@
   ],
   "key": {
     "a": {
-      "tag": "c:ingots/copper"
+      "item": "minecraft:copper_ingot"
     },
     "b": {
       "item": "minecraft:jukebox"
