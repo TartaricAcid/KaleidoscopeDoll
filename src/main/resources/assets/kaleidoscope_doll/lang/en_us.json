@@ -6,7 +6,14 @@
   "block.kaleidoscope_doll.yellow_doll_gift_box": "Yellow Doll Gift Box",
   "block.kaleidoscope_doll.doll": "Doll",
   "tooltip.kaleidoscope_doll.doll_machine": "Use diamond tokens to draw dolls!",
-  "tooltip.kaleidoscope_doll.doll.author": "Author",
   "tooltip.kaleidoscope_doll.doll_gift_box": "Destroy and get the doll",
-  "subtitle.kaleidoscope_doll.block.duck_toy": "Duck Toy Sound"
+  "subtitle.kaleidoscope_doll.block.duck_toy": "Duck Toy Sound",
+  "tooltip.kaleidoscope_doll.doll.vanilla": "Vanilla",
+  "tooltip.kaleidoscope_doll.doll.author_ysbb": "Author: ysbb",
+  "tooltip.kaleidoscope_doll.doll.author_tartaric_acid": "Author: tartaric_acid",
+  "tooltip.kaleidoscope_doll.doll.author_abert_cat": "Author: Abert_Cat",
+  "tooltip.kaleidoscope_doll.doll.author_cr_019": "Author: CR_019",
+  "tooltip.kaleidoscope_doll.doll.sponsors_guriformes": "Sponsors: guriformes",
+  "tooltip.kaleidoscope_doll.doll.sponsors_kupurrra": "Sponsors: Kupurrra",
+  "tooltip.kaleidoscope_doll.doll.sponsors_tanyeng": "Sponsors: tanyeng"
 }
