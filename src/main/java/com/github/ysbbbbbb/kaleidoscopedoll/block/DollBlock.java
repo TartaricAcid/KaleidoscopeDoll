@@ -1,18 +1,14 @@
 package com.github.ysbbbbbb.kaleidoscopedoll.block;
 
 import com.github.ysbbbbbb.kaleidoscopedoll.init.ModSounds;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -29,8 +25,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
 public class DollBlock extends HorizontalDirectionalBlock {
     private static final VoxelShape SHAPE = Block.box(2.0d, 0.0d, 2.0d, 14.0d, 12.0d, 14.0d);
 
@@ -40,15 +34,6 @@ public class DollBlock extends HorizontalDirectionalBlock {
                 .sound(SoundType.WOOL).strength(0f, 10f)
                 .noOcclusion());
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.SOUTH));
-    }
-
-    public static DollBlock getAuthorDoll() {
-        return new DollBlock() {
-            @Override
-            public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> list, TooltipFlag pFlag) {
-                list.add(Component.translatable("tooltip.kaleidoscope_doll.doll.author").withStyle(ChatFormatting.DARK_GRAY));
-            }
-        };
     }
 
     @Override

@@ -26,5 +26,6 @@ public class DataGenerators {
                 new TagBlock(packOutput, registries, KaleidoscopeDoll.MOD_ID, existingFileHelper));
         vanillaPack.addProvider(packOutput ->
                 new TagItem(packOutput, registries, blockTagsProvider.contentsGetter(), KaleidoscopeDoll.MOD_ID, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
     }
 }

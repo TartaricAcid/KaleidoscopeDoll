@@ -6,7 +6,14 @@
   "block.kaleidoscope_doll.yellow_doll_gift_box": "黄色玩偶礼品盒",
   "block.kaleidoscope_doll.doll": "玩偶",
   "tooltip.kaleidoscope_doll.doll_machine": "使用钻石代币抽奖！",
-  "tooltip.kaleidoscope_doll.doll.author": "作者",
   "tooltip.kaleidoscope_doll.doll_gift_box": "破坏后获取玩偶",
-  "subtitle.kaleidoscope_doll.block.duck_toy": "声音：鸭子玩具"
+  "subtitle.kaleidoscope_doll.block.duck_toy": "声音：鸭子玩具",
+  "tooltip.kaleidoscope_doll.doll.vanilla": "原版",
+  "tooltip.kaleidoscope_doll.doll.author_ysbb": "作者：盐酸棒冰",
+  "tooltip.kaleidoscope_doll.doll.author_tartaric_acid": "作者：酒石酸菌",
+  "tooltip.kaleidoscope_doll.doll.author_abert_cat": "作者：Abert_Cat",
+  "tooltip.kaleidoscope_doll.doll.author_cr_019": "作者：CR_019",
+  "tooltip.kaleidoscope_doll.doll.sponsors_guriformes": "捐赠者：guriformes",
+  "tooltip.kaleidoscope_doll.doll.sponsors_kupurrra": "捐赠者：Kupurrra",
+  "tooltip.kaleidoscope_doll.doll.sponsors_tanyeng": "捐赠者：tanyeng"
 }

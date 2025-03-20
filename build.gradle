@@ -42,7 +42,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', mod_id
         }
         data {
-            workingDirectory project.file('run-data')
+            workingDirectory project.file('run')
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
     }
