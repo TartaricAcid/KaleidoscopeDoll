@@ -1,0 +1,9 @@
+{
+  "block.duck_toy": {
+    "category": "neutral",
+    "subtitle": "subtitle.kaleidoscope_doll.block.duck_toy",
+    "sounds": [
+      "kaleidoscope_doll:block/duck_toy"
+    ]
+  }
+}
