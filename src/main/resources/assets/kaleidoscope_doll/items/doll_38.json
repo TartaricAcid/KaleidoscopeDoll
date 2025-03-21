@@ -1,1 +1,6 @@
-{"model": {"model": "kaleidoscope_doll:item/doll_38", "type": "minecraft:model"}}
+{
+  "model": {
+    "model": "kaleidoscope_doll:item/doll_38",
+    "type": "minecraft:model"
+  }
+}

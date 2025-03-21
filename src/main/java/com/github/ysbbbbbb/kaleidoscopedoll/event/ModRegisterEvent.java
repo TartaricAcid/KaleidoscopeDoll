@@ -21,15 +21,28 @@ import java.util.stream.IntStream;
 
 @EventBusSubscriber(modid = KaleidoscopeDoll.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ModRegisterEvent {
-    private static final int MAX_DOLL_COUNT = 67;
-    public static Map<ResourceLocation, DollBlock> DOLL_BLOCKS = Maps.newHashMap();
-    public static Set<Item> DOLL_ITEMS = Sets.newLinkedHashSet();
+    public static final Map<ResourceLocation, DollBlock> DOLL_BLOCKS = Maps.newHashMap();
+    public static final Set<Item> DOLL_ITEMS = Sets.newLinkedHashSet();
+    private static final int MAX_DOLL_COUNT = 72;
+    private static final Map<ResourceLocation, String> SPECIAL_TOOLTIPS = Maps.newHashMap();
+
+    private static void registerAllSpecialTooltips() {
+        registerSpecialTooltips("doll_0", "author_ysbb");
+        registerSpecialTooltips("doll_1", "author_tartaric_acid");
+        registerSpecialTooltips("doll_67", "author_abert_cat");
+        registerSpecialTooltips("doll_68", "author_cr_019");
+
+        registerSpecialTooltips("doll_69", "sponsors_guriformes");
+        registerSpecialTooltips("doll_70", "sponsors_kupurrra");
+        registerSpecialTooltips("doll_71", "sponsors_tanyeng");
+    }
 
     @SubscribeEvent
     public static void registerBlocks(RegisterEvent event) {
+        registerAllSpecialTooltips();
         // 批量注册玩偶
         if (event.getRegistryKey().equals(Registries.BLOCK)) {
-            IntStream.range(2, MAX_DOLL_COUNT).forEach(i -> {
+            IntStream.range(0, MAX_DOLL_COUNT).forEach(i -> {
                 ResourceLocation name = ResourceLocation.fromNamespaceAndPath(KaleidoscopeDoll.MOD_ID, "doll_" + i);
                 ResourceKey<Block> id = ResourceKey.create(Registries.BLOCK, name);
                 DollBlock block = new DollBlock(BlockBehaviour.Properties.of().setId(id));
@@ -38,14 +51,19 @@ public class ModRegisterEvent {
             });
         }
         if (event.getRegistryKey().equals(Registries.ITEM)) {
-            IntStream.range(2, MAX_DOLL_COUNT).forEach(i -> {
+            IntStream.range(0, MAX_DOLL_COUNT).forEach(i -> {
                 ResourceLocation name = ResourceLocation.fromNamespaceAndPath(KaleidoscopeDoll.MOD_ID, "doll_" + i);
                 ResourceKey<Item> id = ResourceKey.create(Registries.ITEM, name);
                 DollBlock block = DOLL_BLOCKS.get(name);
-                Item item = new DollItem(block, new Item.Properties().setId(id));
+                Item item = new DollItem(block, new Item.Properties().setId(id), SPECIAL_TOOLTIPS.getOrDefault(name, "vanilla"));
                 DOLL_ITEMS.add(item);
                 event.register(Registries.ITEM, name, () -> item);
             });
         }
+    }
+
+    private static void registerSpecialTooltips(String name, String tooltip) {
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(KaleidoscopeDoll.MOD_ID, name);
+        SPECIAL_TOOLTIPS.put(id, tooltip);
     }
 }
